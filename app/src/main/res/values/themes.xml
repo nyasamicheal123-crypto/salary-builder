@@ -1,4 +1,3 @@
-<<resources>
-    <!-- Use Material3 DayNight theme to prevent startup crashes -->
+<resources>
     <style name="Theme.SalaryHelper" parent="Theme.Material3.DayNight.NoActionBar" />
 </resources>
