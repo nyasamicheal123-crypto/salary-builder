@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import com.example.salaryhelper.ui.theme.SalaryHelperTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -42,14 +43,18 @@ fun SalaryCalculatorScreen() {
     val savings = netSalary - totalExpenses
     val savingsRate = if (netSalary > 0) (savings / netSalary) * 100 else 0.0
 
-    com.example.salaryhelper.ui.theme.SalaryHelperTheme(darkTheme = isDarkTheme) {
+    SalaryHelperTheme(darkTheme = isDarkTheme) {
         Scaffold(
             topBar = {
                 TopAppBar(
                     title = { Text("💰 Salary & Budget Helper") },
                     actions = {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.padding(end = 12.dp)
+                        ) {
                             Text(if (isDarkTheme) "🌙" else "☀️")
+                            Spacer(modifier = Modifier.width(4.dp))
                             Switch(
                                 checked = isDarkTheme,
                                 onCheckedChange = { isDarkTheme = it }
