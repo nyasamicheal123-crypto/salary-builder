@@ -1,3 +1,4 @@
-<resources>
-    <style name="Theme.SalaryHelper" parent="android:Theme.Material.NoActionBar" />
+<<resources>
+    <!-- Use Material3 DayNight theme to prevent startup crashes -->
+    <style name="Theme.SalaryHelper" parent="Theme.Material3.DayNight.NoActionBar" />
 </resources>
